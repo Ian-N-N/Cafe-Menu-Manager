@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function AddItemForm(){
+function AddItemForm({onAdd}){
 const [name, setName]=useState("")
 const [category, setCartegory]=useState("Drinks")
 const [price, setPrice]=useState("")
@@ -39,5 +39,20 @@ function handleSubmit(e){
 })
 
 }
+return(
+    <form onSubmit={handleSubmit}>
+        <input placeholder="Name" value={name} onChange={e=>setName(e.target.value)}></>
+        <select>
+            <option >Drinks</option>
+            <option >Food</option>
+            <option >Dessert</option>
+        </select>
+                <input placeholder="Price" value={price} onChange={e=>setPrice(e.target.value)}></>
+                <input placeholder="Image URL" value={image} onChange={e=>setImage(e.target.value)}></>
+
+
+
+        </>
+)
 }
 export default AddItemForm
